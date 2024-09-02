@@ -1,0 +1,9 @@
+[versions]
+googleServices = "4.4.2"
+googleGmsGoogleServices = "4.4.2"
+firebaseFirestore = "25.1.0"
+[libraries]
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+[plugins]
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
