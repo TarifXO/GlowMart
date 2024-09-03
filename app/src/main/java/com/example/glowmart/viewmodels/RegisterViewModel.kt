@@ -1,4 +1,4 @@
-package com.example.glowmart.viewmodel
+package com.example.glowmart.viewmodels
 
 import androidx.lifecycle.ViewModel
 import com.example.glowmart.data.User
@@ -9,7 +9,6 @@ import com.example.glowmart.utils.Resource
 import com.example.glowmart.utils.validateEmail
 import com.example.glowmart.utils.validatePassword
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel

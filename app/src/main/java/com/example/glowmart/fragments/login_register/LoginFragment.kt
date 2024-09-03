@@ -13,8 +13,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.glowmart.R
 import com.example.glowmart.activities.ShoppingActivity
 import com.example.glowmart.databinding.FragmentLoginBinding
+import com.example.glowmart.dialog.setUpBottomSheetDialog
 import com.example.glowmart.utils.Resource
-import com.example.glowmart.viewmodel.LoginViewModel
+import com.example.glowmart.viewmodels.LoginViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -44,6 +46,29 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 val email = edEmailLogin.text.toString().trim()
                 val password = edPasswordLogin.text.toString()
                 viewModel.login(email, password)
+            }
+        }
+
+        binding.tvForgotPasswordLogin.setOnClickListener {
+            setUpBottomSheetDialog { email ->
+                viewModel.resetPassword(email)
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.resetPassword.collect {
+                when (it) {
+                    is Resource.Loading -> {
+
+                    }
+                    is Resource.Success -> {
+                        Snackbar.make(requireView(), "Reset link was sent to your email", Snackbar.LENGTH_LONG).show()
+                    }
+                    is Resource.Error -> {
+                        Snackbar.make(requireView(), "Error: ${it.message}", Snackbar.LENGTH_LONG).show()
+                    }
+                    else -> Unit
+                }
             }
         }
 

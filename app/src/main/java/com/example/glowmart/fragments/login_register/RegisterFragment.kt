@@ -16,7 +16,7 @@ import com.example.glowmart.data.User
 import com.example.glowmart.databinding.FragmentRegisterBinding
 import com.example.glowmart.utils.RegisterValidation
 import com.example.glowmart.utils.Resource
-import com.example.glowmart.viewmodel.RegisterViewModel
+import com.example.glowmart.viewmodels.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

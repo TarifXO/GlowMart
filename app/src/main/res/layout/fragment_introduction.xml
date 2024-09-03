@@ -27,6 +27,13 @@
         android:background="@drawable/ellips"
         app:layout_constraintDimensionRatio="1:1"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/texture_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineLeftTexture"/>
+
     <TextView
         android:id="@+id/tvRightAddressForShopping"
         android:layout_width="wrap_content"
@@ -57,12 +64,7 @@
         android:layout_marginTop="15dp"
         />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/texture_right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineLeftTexture"/>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonStart"
