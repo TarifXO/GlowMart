@@ -72,7 +72,7 @@ class RegisterFragment : Fragment() {
                             Log.e("main", "Error: ${resource.message}")
                         }
 
-                        is Resource.Empty -> {
+                        is Resource.Unspecified -> {
                             Log.d("main", "Empty")
                         }
                     }
