@@ -1,5 +1,6 @@
 package com.example.glowmart.fragments.categories
 
+import BestDealsAdapter
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,10 +11,10 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.glowmart.R
-import com.example.glowmart.adapters.BestDealsAdapter
 import com.example.glowmart.adapters.BestProductsAdapter
 import com.example.glowmart.adapters.SpecialProductsAdapter
 import com.example.glowmart.databinding.FragmentMainCategoryBinding
@@ -172,10 +173,10 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         }
     }
 
-    override fun onResume() {
+    /*override fun onResume() {
         super.onResume()
 
-        //showBottomNavigationView()
-    }
+        showBottomNavigationView()
+    }*/
 
 }

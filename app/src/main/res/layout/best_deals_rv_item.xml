@@ -59,7 +59,7 @@
             android:textSize="12sp"
             android:fontFamily="@font/sf_pro_display"/>
 
-        <androidx.core.widget.ContentLoadingProgressBar
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_see_product"
             android:layout_width="83dp"
             android:layout_height="28dp"
@@ -69,7 +69,7 @@
             android:textColor="@color/white"
             android:textSize="10dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_deal_product_name"
+            app:layout_constraintStart_toEndOf="@id/tv_old_price"
             app:layout_constraintTop_toTopOf="@id/tv_deal_product_name"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"

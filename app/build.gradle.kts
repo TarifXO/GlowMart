@@ -70,4 +70,6 @@ dependencies {
     // Glide for image loading
     implementation(libs.glide)
     kapt(libs.compiler)
+    implementation (libs.glide.v4120)
+    annotationProcessor(libs.compiler.v4120)
 }

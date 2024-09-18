@@ -32,7 +32,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val categoriesFragments = arrayListOf<Fragment>(
+        val categoriesFragments = arrayListOf(
             MainCategoryFragment(),
             ChairFragment(),
             CupboardFragment(),
@@ -42,8 +42,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         )
 
         val viewPagerAdapter = HomeViewPagerAdapter(categoriesFragments, childFragmentManager, lifecycle)
-        binding.viewPagerHome.adapter = viewPagerAdapter
-        TabLayoutMediator(binding.tabLayout, binding.viewPagerHome) { tab, position ->
+        binding.viewpagerHome.adapter = viewPagerAdapter
+        TabLayoutMediator(binding.tabLayout, binding.viewpagerHome) { tab, position ->
             when(position){
                 0 -> tab.text = "Main"
                 1 -> tab.text = "Chairs"
