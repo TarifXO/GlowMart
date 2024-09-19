@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.glowmart.R
 import com.example.glowmart.adapters.BestProductsAdapter
 import com.example.glowmart.databinding.FragmentBaseCategoryBinding
+import com.example.glowmart.utils.showBottomNavigationView
 
 
 open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
@@ -35,7 +36,7 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
         setupOfferRv()
         setupBestProductsRv()
 
-        /*bestProductsAdapter.onClick = {
+        bestProductsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
@@ -43,7 +44,7 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
         offerAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
-        }*/
+        }
 
         binding.rvOfferProducts.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -102,9 +103,9 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
         }
     }
 
-    /*override fun onResume() {
+    override fun onResume() {
         super.onResume()
         showBottomNavigationView()
-    }*/
+    }
 
 }

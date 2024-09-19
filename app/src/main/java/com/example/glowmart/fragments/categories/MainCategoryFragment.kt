@@ -19,6 +19,7 @@ import com.example.glowmart.adapters.BestProductsAdapter
 import com.example.glowmart.adapters.SpecialProductsAdapter
 import com.example.glowmart.databinding.FragmentMainCategoryBinding
 import com.example.glowmart.utils.Resource
+import com.example.glowmart.utils.showBottomNavigationView
 import com.example.glowmart.viewmodels.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -51,7 +52,7 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         setupBestDealsRv()
         setupBestProducts()
 
-        /*specialProductsAdapter.onClick = {
+        specialProductsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
@@ -64,7 +65,7 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         bestProductsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
-        }*/
+        }
 
 
         lifecycleScope.launch {
@@ -173,10 +174,10 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         }
     }
 
-    /*override fun onResume() {
+    override fun onResume() {
         super.onResume()
 
         showBottomNavigationView()
-    }*/
+    }
 
 }
