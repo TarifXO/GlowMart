@@ -11,12 +11,15 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.glowmart.R
 import com.example.glowmart.adapters.ColorsAdapter
 import com.example.glowmart.adapters.SizesAdapter
 import com.example.glowmart.adapters.ViewPager2Images
+import com.example.glowmart.data.CartProduct
 import com.example.glowmart.databinding.FragmentProductDetailsBinding
 import com.example.glowmart.utils.Resource
 import com.example.glowmart.utils.hideBottomNavigationView
+import com.example.glowmart.viewmodels.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -30,7 +33,7 @@ class ProductDetailsFragment : Fragment() {
     private val colorsAdapter by lazy { ColorsAdapter() }
     private var selectedColor: Int? = null
     private var selectedSize: String? = null
-    //private val viewModel by viewModels<DetailsViewModel>()
+    private val viewModel by viewModels<DetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,7 +66,7 @@ class ProductDetailsFragment : Fragment() {
             selectedColor = it
         }
 
-       /* binding.buttonAddToCart.setOnClickListener {
+        binding.buttonAddToCart.setOnClickListener {
             viewModel.addUpdateProductInCart(CartProduct(product, 1, selectedColor, selectedSize))
         }
 
@@ -71,22 +74,19 @@ class ProductDetailsFragment : Fragment() {
             viewModel.addToCart.collectLatest {
                 when (it) {
                     is Resource.Loading -> {
-                        binding.buttonAddToCart.startAnimation()
                     }
 
                     is Resource.Success -> {
-                        binding.buttonAddToCart.revertAnimation()
                         binding.buttonAddToCart.setBackgroundColor(resources.getColor(R.color.black))
                     }
 
                     is Resource.Error -> {
-                        binding.buttonAddToCart.stopAnimation()
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }
             }
-        }*/
+        }
 
         binding.apply {
             tvProductName.text = product.name

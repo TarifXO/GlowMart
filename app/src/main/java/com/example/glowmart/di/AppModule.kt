@@ -2,9 +2,11 @@ package com.example.glowmart.di
 
 import android.app.Application
 import android.content.Context.MODE_PRIVATE
+import com.example.glowmart.firebase.FirebaseCommon
 import com.example.glowmart.utils.Constants.INTRODUCTION_SP
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 import dagger.Module
 import dagger.Provides
@@ -28,4 +30,11 @@ object AppModule {
     fun provideIntroductionSP(
         application: Application
     ) = application.getSharedPreferences(INTRODUCTION_SP, MODE_PRIVATE)
+
+    @Provides
+    @Singleton
+    fun provideFirebaseCommon(
+        firestore: FirebaseFirestore,
+        auth: FirebaseAuth
+    ) = FirebaseCommon(firestore, auth)
 }
