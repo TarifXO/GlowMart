@@ -18,24 +18,25 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class ShoppingActivity : AppCompatActivity() {
 
-    val binding by lazy {
+    private val binding by lazy {
         ActivityShoppingBinding.inflate(layoutInflater)
     }
-    val viewModel by viewModels<CartViewModel>()
+
+    private val viewModel by viewModels<CartViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.shoppingHostFragment) as NavHostFragment
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.shoppingHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
         binding.bottomNavigation.setupWithNavController(navController)
 
         lifecycleScope.launch {
-            viewModel.cartProducts.collectLatest {
-                when (it) {
+            viewModel.cartProducts.collectLatest { resource ->
+                when (resource) {
                     is Resource.Success -> {
-                        val count = it.data?.size ?: 0
+                        val count = resource.data?.size ?: 0
                         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
                         bottomNavigation.getOrCreateBadge(R.id.cartFragment).apply {
                             number = count

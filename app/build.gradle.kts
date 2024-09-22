@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.navigation.ui.ktx)
     implementation(libs.firebase.firestore)
     implementation(libs.play.services.analytics.impl)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -72,4 +74,8 @@ dependencies {
     kapt(libs.compiler)
     implementation (libs.glide.v4120)
     annotationProcessor(libs.compiler.v4120)
+    implementation(libs.kotlinx.coroutines.play.services)
+
+    // StepView for step progress
+    implementation(libs.stepview)
 }
