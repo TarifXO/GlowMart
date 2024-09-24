@@ -33,7 +33,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater)
         return binding.root
     }
@@ -56,6 +56,10 @@ class ProfileFragment : Fragment() {
                 false
             )
             findNavController().navigate(action)
+        }
+
+        binding.linearLanguage.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_languageFragment)
         }
 
         binding.linearLogOut.setOnClickListener {
