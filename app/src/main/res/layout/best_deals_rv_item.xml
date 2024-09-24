@@ -63,7 +63,7 @@
             android:id="@+id/btn_see_product"
             android:layout_width="83dp"
             android:layout_height="28dp"
-            android:background="@drawable/blue_background"
+            android:background="@drawable/yellow_background"
             android:fontFamily="@font/poppins_light"
             android:text="See product"
             android:textColor="@color/white"

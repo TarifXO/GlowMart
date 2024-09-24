@@ -51,7 +51,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="77dp"
             android:layout_height="25dp"
-            android:background="@drawable/blue_background"
+            android:background="@drawable/yellow_background"
             android:fontFamily="@font/poppins_light"
             android:text="@string/add_to_cart"
             android:textColor="@color/white"
@@ -71,11 +71,11 @@
             android:background="@drawable/icon_background"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:src="@drawable/ic_favorite"
                 android:layout_gravity="center"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="4dp"
                 />
         </LinearLayout>
 

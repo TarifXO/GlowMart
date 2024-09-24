@@ -281,8 +281,9 @@
                         android:id="@+id/switchNotification"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:thumbTint="@color/g_dark_yellow"
                         android:layout_gravity="center_vertical"
-                        android:buttonTint="#4cd964"
+                        android:buttonTint="@color/g_dark_yellow"
                         android:checked="true"
                         />
 

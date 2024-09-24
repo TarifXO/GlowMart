@@ -115,7 +115,7 @@
             android:id="@+id/buttonRegisterRegister"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
-            style="@style/blueButtonStyle"
+            style="@style/yellowButtonStyle"
             app:layout_constraintTop_toBottomOf="@id/edPasswordRegister"
             app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
             app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
